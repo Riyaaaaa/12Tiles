@@ -9,19 +9,24 @@
 #ifndef GameManager_hpp
 #define GameManager_hpp
 
-#include "SingletonBase.hpp"
+#include "SpiralLibrary/Cocos2d/GameManagerBase.hpp"
 #include "GameScene.h"
+#include "TileController.hpp"
+#include <memory>
 
 #include "cocos2d.h"
 
-class GameManager : public SingletonBase<GameManager> {
-    typedef GameScene scene_t;
+class GameManager : public libspiral::GameManagerBase<GameManager, GameScene> {
 public:
-    void runScene();
-    void update(float delta);
+    void runScene() override;
+    void update(float delta) override;
+    
+    void spawnTile();
+   
+    void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* e);
     
 private:
-    scene_t* running_scene;
+    std::unique_ptr<TileController> _tileController;
 };
 
 #endif /* GameManager_hpp */
