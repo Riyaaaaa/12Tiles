@@ -59,12 +59,10 @@
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
-		70377B371D853FF600613707 /* TelopController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70377B351D853FF600613707 /* TelopController.cpp */; settings = {ASSET_TAGS = (); }; };
 		706453D61D81A73300F2A227 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706453D41D81A73300F2A227 /* GameManager.cpp */; settings = {ASSET_TAGS = (); }; };
 		706453D91D81A96900F2A227 /* TileController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706453D71D81A96900F2A227 /* TileController.cpp */; settings = {ASSET_TAGS = (); }; };
 		706454201D81AEFA00F2A227 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 706453FF1D81AEFA00F2A227 /* README.md */; settings = {ASSET_TAGS = (); }; };
 		706454231D831FBF00F2A227 /* NumTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706454211D831FBF00F2A227 /* NumTile.cpp */; settings = {ASSET_TAGS = (); }; };
-		706454261D83E95700F2A227 /* TileLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706454241D83E95700F2A227 /* TileLayout.cpp */; settings = {ASSET_TAGS = (); }; };
 		706454291D84471500F2A227 /* GameLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706454271D84471500F2A227 /* GameLogic.cpp */; settings = {ASSET_TAGS = (); }; };
 		7064542D1D848E2700F2A227 /* AstarSearch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7064542B1D848E2700F2A227 /* AstarSearch.cpp */; settings = {ASSET_TAGS = (); }; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
@@ -162,8 +160,6 @@
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		70377B341D852EF100613707 /* Structure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Structure.h; sourceTree = "<group>"; };
-		70377B351D853FF600613707 /* TelopController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TelopController.cpp; sourceTree = "<group>"; };
-		70377B361D853FF600613707 /* TelopController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TelopController.hpp; sourceTree = "<group>"; };
 		706453D41D81A73300F2A227 /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameManager.cpp; sourceTree = "<group>"; };
 		706453D51D81A73300F2A227 /* GameManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameManager.hpp; sourceTree = "<group>"; };
 		706453D71D81A96900F2A227 /* TileController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileController.cpp; sourceTree = "<group>"; };
@@ -224,8 +220,6 @@
 		7064541F1D81AEFA00F2A227 /* ValueHolder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ValueHolder.hpp; sourceTree = "<group>"; };
 		706454211D831FBF00F2A227 /* NumTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NumTile.cpp; sourceTree = "<group>"; };
 		706454221D831FBF00F2A227 /* NumTile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NumTile.hpp; sourceTree = "<group>"; };
-		706454241D83E95700F2A227 /* TileLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileLayout.cpp; sourceTree = "<group>"; };
-		706454251D83E95700F2A227 /* TileLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TileLayout.hpp; sourceTree = "<group>"; };
 		706454271D84471500F2A227 /* GameLogic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameLogic.cpp; sourceTree = "<group>"; };
 		706454281D84471500F2A227 /* GameLogic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameLogic.hpp; sourceTree = "<group>"; };
 		7064542A1D84742800F2A227 /* AStar.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AStar.hpp; sourceTree = "<group>"; };
@@ -387,15 +381,11 @@
 				706453DA1D81AA3500F2A227 /* Constants.h */,
 				706454211D831FBF00F2A227 /* NumTile.cpp */,
 				706454221D831FBF00F2A227 /* NumTile.hpp */,
-				706454241D83E95700F2A227 /* TileLayout.cpp */,
-				706454251D83E95700F2A227 /* TileLayout.hpp */,
 				706454271D84471500F2A227 /* GameLogic.cpp */,
 				706454281D84471500F2A227 /* GameLogic.hpp */,
 				7064542B1D848E2700F2A227 /* AstarSearch.cpp */,
 				7064542C1D848E2700F2A227 /* AstarSearch.hpp */,
 				70377B341D852EF100613707 /* Structure.h */,
-				70377B351D853FF600613707 /* TelopController.cpp */,
-				70377B361D853FF600613707 /* TelopController.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -775,11 +765,9 @@
 				706454231D831FBF00F2A227 /* NumTile.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				706453D61D81A73300F2A227 /* GameManager.cpp in Sources */,
-				706454261D83E95700F2A227 /* TileLayout.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* GameScene.cpp in Sources */,
 				706453D91D81A96900F2A227 /* TileController.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
-				70377B371D853FF600613707 /* TelopController.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				706454201D81AEFA00F2A227 /* README.md in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
