@@ -19,12 +19,13 @@ public:
     
     bool isTileMovable();
     void selectTile(libspiral::Index index);
+    void purge();
     
-    bool isVaildIndex(libspiral::Index index);
+    static bool isVaildIndex(libspiral::Index index);
     
 private:
     std::shared_ptr<TileController> _tileController;
-    NumTile* _selectedTile;
+    std::pair<libspiral::Index, NumTile*> _selectedTile;
 };
 
 #endif /* GameLogic_hpp */

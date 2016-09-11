@@ -12,6 +12,7 @@
 #include "SpiralLibrary/Cocos2d/GameManagerBase.hpp"
 #include "GameScene.h"
 #include "TileController.hpp"
+#include "GameLogic.hpp"
 #include <memory>
 
 #include "cocos2d.h"
@@ -24,9 +25,12 @@ public:
     void spawnTile();
    
     void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* e);
+    void onTileAnimationBegan();
+    void onTileAnimationEnded();
     
 private:
-    std::unique_ptr<TileController> _tileController;
+    std::shared_ptr<TileController> _tileController;
+    std::unique_ptr<GameLogic> _gameLogic;
 };
 
 #endif /* GameManager_hpp */

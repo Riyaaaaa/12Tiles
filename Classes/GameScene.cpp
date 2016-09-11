@@ -46,7 +46,7 @@ void GameScene::initLisener() {
         if(op) {
             return op.value();
         }
-        return false;
+        return true;
     };
     
     _touchListener->onTouchMoved = [=](cocos2d::Touch* touch, cocos2d::Event* e) {
@@ -60,6 +60,8 @@ void GameScene::initLisener() {
     _touchListener->onTouchCancelled = [=](cocos2d::Touch* touch, cocos2d::Event* e) {
         libspiral::maybeCall(onTouchCancelled, touch, e);
     };
+    
+    getEventDispatcher()->addEventListenerWithSceneGraphPriority(_touchListener, this);
 }
 
 

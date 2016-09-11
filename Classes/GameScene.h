@@ -13,13 +13,15 @@ public:
     
     void initLisener();
     
+    
+    
     std::function<bool(cocos2d::Touch*, cocos2d::Event*)> onTouchBegan;
     std::function<void(cocos2d::Touch*, cocos2d::Event*)> onTouchMoved;
     std::function<void(cocos2d::Touch*, cocos2d::Event*)> onTouchEnded;
     std::function<void(cocos2d::Touch*, cocos2d::Event*)> onTouchCancelled;
     
 private:
-    cocos2d::EventListenerTouchOneByOne* _touchListener;
+    CC_SYNTHESIZE_READONLY(cocos2d::EventListenerTouchOneByOne*, _touchListener, TouchListener);
 };
 
 #endif // __GAME_SCENE_H__

@@ -17,6 +17,7 @@
 #include "cocos2d.h"
 #include "GameScene.h"
 #include "NumTile.hpp"
+#include "Structure.h"
 
 class TileController {
 public:
@@ -29,22 +30,27 @@ public:
     TileController(GameScene* scene);
     void initTiles();
     
-    bool isTileMovable();
     const tile_arr_t& getTiles() { return _tiles; };
     
     void addTile(libspiral::Index index, int value);
     void setTileValue(libspiral::Index index, int value);
-    void setSelectedTile(libspiral::Index index) { _selectedTile = _tiles[index]; }
+    
+    void move(const std::vector<libspiral::Index>& path, libspiral::Index begin);
+    
+    void update(float delta);
+    
+    std::function<void()> onTaskRegistered;
+    std::function<void()> onAllTaskFinished;
     
     libspiral::Optional<libspiral::Index> hitTest(cocos2d::Vec2 touchPos);
     
     static cocos2d::Vec2 convertToPositionWithIndex(libspiral::Index index);
+    static libspiral::Index convertToIndexWithPosition(cocos2d::Vec2 pos);
     
 private:
     tile_arr_t _tiles;
-    NumTile* _selectedTile;
-    
     GameScene* _scene;
+    std::vector<MoveTask> _moveTasks;
     
 };
 

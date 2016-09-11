@@ -65,6 +65,7 @@
 		706454231D831FBF00F2A227 /* NumTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706454211D831FBF00F2A227 /* NumTile.cpp */; settings = {ASSET_TAGS = (); }; };
 		706454261D83E95700F2A227 /* TileLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706454241D83E95700F2A227 /* TileLayout.cpp */; settings = {ASSET_TAGS = (); }; };
 		706454291D84471500F2A227 /* GameLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706454271D84471500F2A227 /* GameLogic.cpp */; settings = {ASSET_TAGS = (); }; };
+		7064542D1D848E2700F2A227 /* AstarSearch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7064542B1D848E2700F2A227 /* AstarSearch.cpp */; settings = {ASSET_TAGS = (); }; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -159,6 +160,7 @@
 		521A8E6319F0C34300D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		70377B341D852EF100613707 /* Structure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Structure.h; sourceTree = "<group>"; };
 		706453D41D81A73300F2A227 /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameManager.cpp; sourceTree = "<group>"; };
 		706453D51D81A73300F2A227 /* GameManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameManager.hpp; sourceTree = "<group>"; };
 		706453D71D81A96900F2A227 /* TileController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileController.cpp; sourceTree = "<group>"; };
@@ -223,6 +225,9 @@
 		706454251D83E95700F2A227 /* TileLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TileLayout.hpp; sourceTree = "<group>"; };
 		706454271D84471500F2A227 /* GameLogic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameLogic.cpp; sourceTree = "<group>"; };
 		706454281D84471500F2A227 /* GameLogic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameLogic.hpp; sourceTree = "<group>"; };
+		7064542A1D84742800F2A227 /* AStar.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AStar.hpp; sourceTree = "<group>"; };
+		7064542B1D848E2700F2A227 /* AstarSearch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AstarSearch.cpp; sourceTree = "<group>"; };
+		7064542C1D848E2700F2A227 /* AstarSearch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AstarSearch.hpp; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -383,6 +388,9 @@
 				706454251D83E95700F2A227 /* TileLayout.hpp */,
 				706454271D84471500F2A227 /* GameLogic.cpp */,
 				706454281D84471500F2A227 /* GameLogic.hpp */,
+				7064542B1D848E2700F2A227 /* AstarSearch.cpp */,
+				7064542C1D848E2700F2A227 /* AstarSearch.hpp */,
+				70377B341D852EF100613707 /* Structure.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -462,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				706453DD1D81AEF900F2A227 /* AlphaBeta.h */,
+				7064542A1D84742800F2A227 /* AStar.hpp */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -757,6 +766,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				706454291D84471500F2A227 /* GameLogic.cpp in Sources */,
+				7064542D1D848E2700F2A227 /* AstarSearch.cpp in Sources */,
 				706454231D831FBF00F2A227 /* NumTile.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				706453D61D81A73300F2A227 /* GameManager.cpp in Sources */,

@@ -27,6 +27,7 @@ namespace Constants {
     }
     
     static constexpr int MAX_VALUE = 12;
+    static constexpr float MOVE_DURATION = 0.2f;
     
     static constexpr libspiral::IndexRange<2> TILE_RANGE
     = libspiral::IndexRange<2>(libspiral::Index(0, 0),
