@@ -1,6 +1,7 @@
 #include "GameScene.h"
 #include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
+
+#include "Constants.h"
 
 #include "SpiralLibrary/Function/MaybeCall.hpp"
 
@@ -27,12 +28,14 @@ bool GameScene::init()
         return false;
     }
     
-    auto rootNode = CSLoader::createNode("MainScene.csb");
+    auto rootNode = CSLoader::createNode(Constants::FilePath::MAIN_CSB);
 
     addChild(rootNode);
 
-    rootNode->getChildByName<Sprite*>("Bg")
-        ->setPosition(Director::getInstance()->getWinSize() / 2.0f);
+    _bg = rootNode->getChildByName<Sprite*>(Constants::NodeName::BACKGROUND);
+    _bg->setPosition(Director::getInstance()->getWinSize() / 2.0f);
+    
+    _pauseButton = rootNode->getChildByName<ui::Button*>(Constants::NodeName::PAUSE_BUTTON);
     
     initLisener();
     
@@ -64,4 +67,8 @@ void GameScene::initLisener() {
     getEventDispatcher()->addEventListenerWithSceneGraphPriority(_touchListener, this);
 }
 
-
+void GameScene::awake() {
+    _bg->runAction(Sequence::create(MoveBy::create(0.05f, Vec2(20, 0)),
+                                    MoveBy::create(0.10f, Vec2(-40, 0)),
+                                    MoveBy::create(0.05f, Vec2(20, 0)), nullptr));
+}

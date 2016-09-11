@@ -18,9 +18,21 @@ _selectedTile(std::make_pair(libspiral::Index{}, nullptr)) {
     
 }
 
+bool GameLogic::isCleared() {
+    auto& tiles = _tileController->getTiles();
+    for(auto && index : Constants::TILE_RANGE) {
+        if(tiles[index] && tiles[index]->getValue() == Constants::MAX_VALUE) {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
 bool GameLogic::isTileMovable() {
     auto& tiles = _tileController->getTiles();
     for(auto && index : Constants::TILE_RANGE) {
+        if(!tiles[index]) continue;
         for(auto && neighbor : CLOCKWISE_4_FOR) {
             if(isVaildIndex(index + neighbor) &&
                (!tiles[index + neighbor] ||
@@ -41,13 +53,18 @@ void GameLogic::selectTile(libspiral::Index index) {
             _tileController->move(aster.search(tiles), _selectedTile.first);
         }
         else {
-            //awake
+            if(onSelectInvalidTile) {
+                onSelectInvalidTile();
+            }
         }
         purge();
     }
     else {
-        _selectedTile.first = index;
-        _selectedTile.second = tiles[index];
+        if(tiles[index]) {
+            _selectedTile.first = index;
+            _selectedTile.second = tiles[index];
+            tiles[index]->light(true);
+        }
     }
 }
 
@@ -59,5 +76,8 @@ bool GameLogic::isVaildIndex(libspiral::Index index) {
 }
 
 void GameLogic::purge() {
+    if(_selectedTile.second) {
+        _selectedTile.second->light(false);
+    }
     _selectedTile = std::make_pair(libspiral::Index{}, nullptr);
 }

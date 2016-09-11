@@ -26,8 +26,23 @@ namespace Constants {
         
     }
     
+    namespace FilePath {
+        static constexpr auto MAIN_CSB = "MainScene.csb";
+        static constexpr auto GAMEOVER_CSB = "EndTelop.csb";
+        static constexpr auto PAUSE_CSB = "Pause.csb";
+        static constexpr auto CLEAR_CSB = "ClearTelop.csb";
+    }
+    
+    namespace NodeName {
+        static constexpr auto BACKGROUND = "Bg";
+        static constexpr auto RETRY_BUTTON = "Retry";
+        static constexpr auto END_BUTTON = "End";
+        static constexpr auto PAUSE_BUTTON = "Pause";
+    }
+    
     static constexpr int MAX_VALUE = 12;
-    static constexpr float MOVE_DURATION = 0.2f;
+    static constexpr float MOVE_DURATION = 0.10f;
+    static constexpr float FLIP_DURATION = 0.10f;
     
     static constexpr libspiral::IndexRange<2> TILE_RANGE
     = libspiral::IndexRange<2>(libspiral::Index(0, 0),

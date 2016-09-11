@@ -17,7 +17,7 @@
             <FileData Type="Normal" Path="BackGround.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_1" ActionTag="-1386660662" Tag="28" IconVisible="False" LeftMargin="27.1837" RightMargin="642.8163" TopMargin="15.4750" BottomMargin="1238.5250" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="50" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Pause" ActionTag="-1386660662" Tag="28" IconVisible="False" LeftMargin="27.1837" RightMargin="642.8163" TopMargin="15.4750" BottomMargin="1238.5250" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="50" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="80.0000" Y="80.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="67.1837" Y="1278.5250" />

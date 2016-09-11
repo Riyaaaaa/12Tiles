@@ -28,7 +28,16 @@ public:
     void onTileAnimationBegan();
     void onTileAnimationEnded();
     
+    void checkGameState();
+    
+    void pause(cocos2d::Ref* unused);
+    void gameover();
+    void clear();
+    void retry();
+    
 private:
+    void openModalWindow(cocos2d::Node* rootNode);
+    
     std::shared_ptr<TileController> _tileController;
     std::unique_ptr<GameLogic> _gameLogic;
 };

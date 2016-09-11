@@ -2,6 +2,7 @@
 #define __GAME_SCENE_H__
 
 #include "cocos2d.h"
+#include "ui/CocosGUI.h"
 
 #include <functional>
 
@@ -13,7 +14,7 @@ public:
     
     void initLisener();
     
-    
+    void awake();
     
     std::function<bool(cocos2d::Touch*, cocos2d::Event*)> onTouchBegan;
     std::function<void(cocos2d::Touch*, cocos2d::Event*)> onTouchMoved;
@@ -21,6 +22,8 @@ public:
     std::function<void(cocos2d::Touch*, cocos2d::Event*)> onTouchCancelled;
     
 private:
+    cocos2d::Sprite* _bg;
+    CC_SYNTHESIZE_READONLY(cocos2d::ui::Button*, _pauseButton, PauseButton);
     CC_SYNTHESIZE_READONLY(cocos2d::EventListenerTouchOneByOne*, _touchListener, TouchListener);
 };
 

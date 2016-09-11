@@ -33,11 +33,13 @@ public:
     const tile_arr_t& getTiles() { return _tiles; };
     
     void addTile(libspiral::Index index, int value);
-    void setTileValue(libspiral::Index index, int value);
+    void tileValueProgress(libspiral::Index index);
     
     void move(const std::vector<libspiral::Index>& path, libspiral::Index begin);
     
     void update(float delta);
+    
+    void reset();
     
     std::function<void()> onTaskRegistered;
     std::function<void()> onAllTaskFinished;

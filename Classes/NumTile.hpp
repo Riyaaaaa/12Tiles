@@ -11,18 +11,25 @@
 
 #include "cocos2d.h"
 
-class NumTile : public cocos2d::Sprite {
+class NumTile : public cocos2d::Node {
 public:
-    NumTile();
     static NumTile* create(int value = 0);
     bool init(int value = 0);
     
+    void addValue(int value);
     void setValue(int value);
+    
+    void light(bool isLight);
+    void flip();
+    
+    bool containsPoint(cocos2d::Vec2 pos);
     
     CC_SYNTHESIZE_READONLY(int, _value, Value);
     
 private:
     cocos2d::Label* _numLabel;
+    cocos2d::Sprite* _tile;
+    cocos2d::Sprite* _lightMask;
 };
 
 #endif /* Tile_hpp */

@@ -56,14 +56,14 @@ void TileController::addTile(libspiral::Index index, int value) {
     }
 }
 
-void TileController::setTileValue(libspiral::Index index, int value) {
-    _tiles[index]->setValue(value);
+void TileController::tileValueProgress(libspiral::Index index) {
+    _tiles[index]->addValue(1);
 }
 
 libspiral::Optional<libspiral::Index> TileController::hitTest(Vec2 touchPos) {
     libspiral::Optional<libspiral::Index> op;
     for(auto && index : Constants::TILE_RANGE) {
-        if(_tiles[index] && _tiles[index]->getBoundingBox().containsPoint(touchPos)) {
+        if(_tiles[index] && _tiles[index]->containsPoint(touchPos)) {
             op = index;
             break;
         }
@@ -92,7 +92,7 @@ libspiral::Index TileController::convertToIndexWithPosition(cocos2d::Vec2 pos) {
 void TileController::move(const std::vector<libspiral::Index>& path, libspiral::Index begin) {
     
     if(path.empty()) {
-        //awake;
+        _scene->awake();
         return;
     }
     
@@ -111,6 +111,7 @@ void TileController::move(const std::vector<libspiral::Index>& path, libspiral::
 }
 
 void TileController::update(float delta) {
+    bool isTaskFinished = false;
     for(auto && task : _moveTasks) {
         auto start = convertToPositionWithIndex(task.current);
         auto target = convertToPositionWithIndex(task.path.back());
@@ -120,19 +121,27 @@ void TileController::update(float delta) {
             task.current = task.path.back();
             task.path.pop_back();
             task.elapsedTime = 0.0f;
+            
+            if(task.path.empty()) {
+                if(_tiles[task.current]) {
+                    _tiles[task.current]->removeFromParent();
+                    task.tile->addValue(1);
+                    task.tile->flip();
+                }
+                _tiles[task.current] = task.tile;
+                isTaskFinished = true;
+            }
         }
         else {
             task.tile->setPosition(start + (target - start) * (task.elapsedTime / Constants::MOVE_DURATION));
         }
     }
     
-    auto it = std::remove_if(_moveTasks.begin(), _moveTasks.end(), [](const MoveTask& task){
-        return task.path.empty();
-    });
-    
-    
-    if(it != _moveTasks.end()) {
-        _moveTasks.erase(it, _moveTasks.end());
+    if(isTaskFinished) {
+        _moveTasks.erase(std::remove_if(_moveTasks.begin(), _moveTasks.end(), [](const MoveTask& task){
+            return task.path.empty();
+        }),
+                         _moveTasks.end());
         
         if(_moveTasks.empty()) {
             if(onAllTaskFinished) {
@@ -140,4 +149,18 @@ void TileController::update(float delta) {
             }
         }
     }
+}
+
+void TileController::reset() {
+    for(auto && index : Constants::TILE_RANGE) {
+        if(_tiles[index]) {
+            _tiles[index]->removeFromParent();
+            _tiles[index];
+        }
+    }
+    
+    for(auto && task: _moveTasks) {
+        task.tile->removeFromParent();
+    }
+    _moveTasks.clear();
 }

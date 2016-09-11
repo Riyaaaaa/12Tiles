@@ -7,6 +7,9 @@
         <Image Name="HelloWorld.png" />
         <Project Name="MainScene.csd" Type="Scene" />
         <Image Name="pause.png" />
+        <Project Name="EndTelop.csd" Type="Node" />
+        <Project Name="Pause.csd" Type="Node" />
+        <Project Name="ClearTelop.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -17,11 +17,14 @@ class GameLogic {
 public:
     GameLogic(const std::shared_ptr<TileController>& controller);
     
+    bool isCleared();
     bool isTileMovable();
     void selectTile(libspiral::Index index);
     void purge();
     
     static bool isVaildIndex(libspiral::Index index);
+    
+    std::function<void()> onSelectInvalidTile;
     
 private:
     std::shared_ptr<TileController> _tileController;
